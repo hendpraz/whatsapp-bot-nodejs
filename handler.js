@@ -1,14 +1,22 @@
 import WhatsappBot from './WhatsappBot';
 
-export const search = async (event, context) => {
-  const data = JSON.parse(event.body);
-  const body = data.Body;
-  console.log(body);
+const getBody = queryString => {
+  const urlParams = new URLSearchParams(queryString);
+  const body = urlParams.get('Body');
 
-  const result = WhatsappBot.googleSearch(body);
+  return body;
+};
+
+export const search = async (event, context) => {
+  const body = getBody(event.body);
+
+  const result = await WhatsappBot.googleSearch(body);
 
   return {
     statusCode: 200,
+    headers: {
+      'Content-Type': 'text/xml',
+    },
     body: result,
   };
 };

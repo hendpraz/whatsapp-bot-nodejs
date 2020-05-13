@@ -21,4 +21,4 @@ functions:
     events:
       - http:
           path: search
-          method: get
+          method: post

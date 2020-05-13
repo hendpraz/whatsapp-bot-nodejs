@@ -40,7 +40,7 @@ class WhatsappBot {
       twiml.message(`${searchData} ${link}`);
 
       res.set('Content-Type', 'text/xml');
-
+      console.log(twiml.toString());
       return res.status(200).send(twiml.toString());
     } catch (error) {
       return next(error);
