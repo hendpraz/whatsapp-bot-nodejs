@@ -1,28 +1,31 @@
 {
   "name": "whatsapp-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A whatspp bot that uses twilio ",
-  "main": "index.js",
+  "main": "handler.js",
   "scripts": {
-    "start": "babel-node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ekpang Michael",
+  "author": "Muhammad Hendry Prasetya",
   "license": "ISC",
   "dependencies": {
     "cors": "2.8.5",
     "dotenv": "8.0.0",
     "express": "^4.16.3",
     "googleapis": "^42.0.0",
-    "twilio": "^4.6.0"
+    "twilio": "^3.43.0"
   },
   "devDependencies": {
     "@babel/cli": "7.5.5",
     "@babel/core": "7.5.5",
     "@babel/node": "^7.5.5",
-    "@babel/preset-env": "^7.5.5"
+    "@babel/preset-env": "^7.5.5",
+    "aws-sdk": "^2.675.0",
+    "serverless-bundle": "^1.2.5",
+    "serverless-dotenv-plugin": "^2.1.1",
+    "serverless-offline": "^5.3.3"
   },
   "engines": {
-    "node": "8.x"
+    "node": "12.x"
   }
 }
